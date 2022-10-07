@@ -70,8 +70,6 @@ class MainActivity : AppCompatActivity() {
                 edt_password.error = "Make sure it's right"
             }
         }
-
-
     }
 
     fun forgetPassword(view: View) {
@@ -96,12 +94,9 @@ class MainActivity : AppCompatActivity() {
         mIntent.data = Uri.parse("mailto:")
         mIntent.type = "text/plain"
 
-
         mIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(recipient))
         mIntent.putExtra(Intent.EXTRA_SUBJECT, subject)
         mIntent.putExtra(Intent.EXTRA_TEXT, message?.password.toString())
-
-
         try {
             startActivity(Intent.createChooser(mIntent, "Choose Email Client..."))
         }
